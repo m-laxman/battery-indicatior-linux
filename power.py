@@ -4,7 +4,7 @@ import time
 import webbrowser
 import datetime
 while True:
-    battery = psutil.sensors_battery()
+    battery = psutil.sensors_battery() #battery details
     plugged = battery.power_plugged
     if plugged:
         pluggedstr = 'Plugged In'
@@ -16,15 +16,15 @@ while True:
     percentstr = str(percent)
     print(percentstr+'% '+'avaliable '+'and '+pluggedstr)
     if percent<=25 and not plugged:
-        webbrowser.open("file:///home/laxman/Downloads/Programs/BatteryProgram/batterylow.html")
+        webbrowser.open("file:///home/laxman/Downloads/Programs/BatteryProgram/batterylow.html") 
         now = datetime.datetime.now()
         print ("Current date and time : ")
         print (now.strftime("%Y-%m-%d %H:%M:%S"))
-    elif percent>=60 and plugged:
+    elif percent>=60 and plugged: 
         webbrowser.open("file:///home/laxman/Downloads/Programs/BatteryProgram/batteryhigh.html")
         now = datetime.datetime.now()
         print ("Current date and time : ")
         print (now.strftime("%Y-%m-%d %H:%M:%S"))
-    time.sleep(1*60)
+    time.sleep(1*60) #runs every 1 min
     
 
